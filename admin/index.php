@@ -1,12 +1,10 @@
 <?php
 include("config.php");
 session_start();
-
 if (isset($_SESSION['username'])) {
     header("Location:{$hostname}/admin/post.php");
 }
 ?>
-
 <!doctype html>
 <html>
    <head>
@@ -19,7 +17,6 @@ if (isset($_SESSION['username'])) {
         <link rel="stylesheet" href="font/font-awesome-4.7.0/css/font-awesome.css">
         <link rel="stylesheet" href="../css/style.css">
     </head>
-
     <body>
         <div id="wrapper-admin" class="body-content">
             <div class="container">
@@ -35,7 +32,6 @@ if (isset($_SESSION['username'])) {
                             if ($row_setting_record['logo'] == "") {
                                 echo '<a href="index.php"><h1>' . $row_setting_record['websitename'] . '</h1></a>';
                             } else {
-                               
                                 echo ('<img class="logo" src="images/' . $row_setting_record['logo'] . '">');
                             }
                         }
@@ -43,15 +39,11 @@ if (isset($_SESSION['username'])) {
                     ?>
                     <!-- logo -->
                       <!-- <img class="logo" src="images/news.jpg"> -->
-
-
                         <h3 class="heading">Admin</h3>
                         <!-- Form Start -->
                         <?php
                         if (isset($_POST['login'])) {
-
                             include("config.php");
-
                             $username = mysqli_real_escape_string($conn, $_POST['username']);
                             $pass = mysqli_real_escape_string($conn, md5($_POST['password']));
                             $sql_user_pass_cheack = "SELECT * FROM user WHERE username = '{$username}' AND password = '{$pass}'" or die("Query Failed!! --> sql_user_pass_cheack");
