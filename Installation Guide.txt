@@ -1,0 +1,74 @@
+# Project Name: PHP Local Project
+
+## Overview
+
+This README file provides the steps necessary to set up and run a PHP project locally on your computer using XAMPP. The project includes a MySQL database with the necessary schema and data located in the `db` directory. 
+
+## Prerequisites
+
+1. **XAMPP**: Ensure you have XAMPP installed on your computer. If not, download and install it from the [official website](https://www.apachefriends.org/index.html).
+
+## Setup Instructions
+
+### Step 1: Start XAMPP
+
+1. Open the XAMPP Control Panel.
+2. Start the **Apache** and **MySQL** modules.
+
+### Step 2: Configure the Project
+
+1. **Download or Clone the Project**: Ensure you have the project files on your local machine.
+2. **Move Project to XAMPP Directory**:
+    - Copy the project folder to the `htdocs` directory of your XAMPP installation. This is typically located at `C:\xampp\htdocs\`.
+
+### Step 3: Import the Database
+
+1. Open your web browser and go to [http://localhost/phpmyadmin](http://localhost/phpmyadmin).
+2. Create a new database:
+    - Click on the **New** button in the left sidebar.
+    - Enter a name for your database (e.g., `my_database`) and click **Create**.
+3. Import the database file:
+    - Select the newly created database from the left sidebar.
+    - Click on the **Import** tab.
+    - Click **Choose File** and select the SQL file located in the `db` directory of your project (e.g., `db/my_database.sql`).
+    - Click **Go** to import the database.
+
+### Step 4: Configure Database Connection
+
+1. Open the project folder in your preferred code editor.
+2. Locate the configuration file where database connection settings are defined (e.g., `config.php`, `db_config.php`, or similar).
+3. Ensure the database settings match the following:
+
+```php
+define('DB_SERVER', 'localhost');
+define('DB_USERNAME', 'root');
+define('DB_PASSWORD', ''); // Leave blank if using the default XAMPP setup
+define('DB_NAME', 'my_database'); // Replace with your database name
+```
+
+### Step 5: Run the Project
+
+1. Open your web browser.
+2. Navigate to [http://localhost/your_project_folder](http://localhost/your_project_folder), replacing `your_project_folder` with the name of your project directory.
+
+### Step 6: Login to the Application
+
+Use the following credentials to log in:
+
+- **Username**: `admin`
+- **Password**: `123`
+
+## Troubleshooting
+
+- Ensure XAMPP's Apache and MySQL services are running.
+- Verify that the project files are correctly placed in the `htdocs` directory.
+- Double-check database connection settings in your configuration file.
+- If you encounter any issues, refer to the XAMPP FAQs and documentation available on the [XAMPP website](https://www.apachefriends.org/faq.html).
+
+## Contact
+
+For any further assistance, please contact Piyush Kumar Raikwar at Contact : +91 88177-62774 & Email: Piyushraikwar289@gmail.com.
+
+---
+
+This README provides the basic steps to get your PHP project running locally. Make sure to customize it according to your project's specific needs.
